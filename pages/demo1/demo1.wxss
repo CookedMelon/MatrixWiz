@@ -1,0 +1,215 @@
+.cal{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.sign{
+  flex:2;
+  text-align: center;
+  justify-self: center;
+  font-size: 30rpx;
+}
+.picker{
+  flex:3;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.demo-box{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:200rpx;
+  width: 700rpx;
+  background:var(--MatColor);
+  border-radius: 20rpx;
+}
+.inputnumber{
+  flex:3;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.Layout{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx;
+}
+
+.answer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.yn{
+  margin: 30rpx;
+  background:var(--buttonColor);
+  text-align: center;
+  border-radius: 20rpx;
+}
+.yncontent{
+  bottom: 50rpx;
+  display:flex;
+  flex-direction: row;
+
+}
+.conresult{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:300rpx;
+  width: 500rpx;
+  height: 80%;
+  background: var(--containerColor);
+}
+.reviseBut{
+  flex:1;
+  height:50rpx;
+}
+.mask{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.contain{
+  display:flex;
+  flex-direction: column;
+  background:var(--smallcontiner);
+  width:600rpx;
+  margin-top: 200rpx;
+  align-items: center;
+  border-radius: 20rpx;
+}
+.txt{
+  font-size: 28rpx;
+  color: #333;
+  background: var(--textColor);
+  border-radius: 20rpx;
+  width:90%;
+  margin-top: 120rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+.MatName{
+  border-radius: 20rpx;
+  margin:10rpx;
+  text-align: center;
+  width:40%;
+  height:50rpx;
+  color: rgb(0, 0, 0);
+  background: var(--nameColor);
+  position: absolute;
+  padding: 20rpx;
+}
+.subcontent{
+  display:flex;
+  flex-direction: row;
+}
+.sub{
+  margin: 30rpx;
+  background:var(--buttonColor);
+}
+.secondLine{
+  display:flex;
+  flex-direction: column;
+}
+.firstLine{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  border-bottom-width: 4rpx;
+  border-bottom-color: rgb(167, 23, 155);
+  border-bottom-style: solid;
+}
+.MatButs{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.MatBut{
+  width:150rpx;
+  height:50rpx;
+  margin:30rpx;
+  background:var(--buttonColor);
+  border-radius:20rpx;
+  color:black;
+  line-height: 50rpx;
+}
+.backBut{
+  width:150rpx;
+  height:70rpx;
+  margin:20rpx;
+  background:var(--buttonColor);
+  border-width:medium;
+  border-color: black;
+  border-radius:20rpx;
+  color:black;
+  text-align: center;
+  line-height: 70rpx;
+}
+.Mat{
+  display:flex;
+  flex-direction: column;
+  width:700rpx;
+  background-color: var(--MatColor);
+  border-radius: 20rpx;
+  margin: 20rpx;
+  color:red;
+  text-align: center;
+}
+.MatContiner{
+  display:flex;
+  flex-direction: column;
+  height:100%;
+  width:750rpx;
+  background-color: var(--containerColor);
+}
+.scroll{
+  height:87%;
+  overflow: scroll;
+}
+.showtxt{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.look{
+  width:80%;
+  background-color: var(--textColor);
+  border-radius: 20rpx;
+}
+.back{
+  height:15%;
+  width:750rpx;
+  background-color: rgb(15, 15, 192);
+  display:flex;
+  position: absolute;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+  flex-direction: row;
+  align-items: center;
+}

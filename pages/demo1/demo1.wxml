@@ -1,0 +1,159 @@
+
+    <form  class="mask" bindsubmit="bindFormSubmitAdd"style="position:fixed;z-index:22;"wx:if="{{showadd}}">
+      <view class="contain">
+        <input class="MatName" value="{{inputName}}" bindblur="bindInputBlurAdd"/>
+      <textarea class="txt" placeholder='请输入矩阵' value="{{inputVal}}" bindinput="bindTextAreaBlurAdd"auto-focus></textarea>
+      <view class="subcontent">
+        <button class="sub" form-type="submit"bindtap='subAdd'style="width:100px;right:50rpx;"> 提交 </button>
+        <button class="sub" form-type="cancel"bindtap='subAddCancel'style="width:100px;left:50rpx;"> 取消 </button>
+      </view>
+      </view>
+    </form>
+    <form  class="mask" bindsubmit="bindFormSubmitEdit"style="position:fixed"wx:if="{{showedit}}">
+      <view class="contain">
+        <input class="MatName" value="{{editName}}" bindinput="bindInputBlurEdit"/>
+        <textarea class="txt" bindinput="bindTextAreaBlurEdit" value="{{editVal}}"></textarea>
+        <view class="subcontent">
+        <button class="sub" form-type="submit"bindtap='subEdit'style="width:100px;right:50rpx;"> 提交 </button>
+        <button class="sub" form-type="cancel"bindtap='subEditCancel'style="width:100px;left:50rpx;"> 取消 </button>
+      </view>
+      </view>
+    </form>
+    <form class="mask"style="position:fixed"wx:if="{{showanswer}}">
+      <view class="contain">
+        <input class="MatName" value="{{tempName}}" bindblur="bindInputBlurAdd"disabled/>
+        <text class="txt" value="{{editVal}}" disabled space>{{tempTxt}}</text>
+        <view>是否保存?</view>
+        <view class="subcontent">
+          <button class="yn" bindtap="Yes"style="width:100px;right:50rpx;">是</button>
+          <button class="yn" bindtap="No"style="width:100px;left:50rpx;">否</button>
+        </view>
+      </view>
+    </form>
+    <form class="mask"style="position:fixed"wx:if="{{showorder}}">
+      <view class="contain">
+        <view style="margin: 20rpx;font-size:40rpx;font-weight: bold;color:red">秩 是</view>
+        <text decode="{{true}}" space="{{true}}">{{theOrder}}</text>
+        <button class="yn" bindtap="confirmOrder">确认</button>
+      </view>
+    </form>
+    <form class="mask"style="position:fixed"wx:if="{{showdet}}">
+      <view class="contain">
+        <view style="margin: 20rpx;font-size:40rpx;font-weight: bold;color:red">行 列 式 是</view>
+        <text decode="{{true}}" space="{{true}}">{{theDet}}</text>
+        <button class="yn" bindtap="confirmDet">确认</button>
+      </view>
+    </form>
+    <form class="cal"style="position:fixed"wx:if="{{showmultplyNumber}}">
+      <view class='demo-box'>
+        <text class='title' style="margin:20rpx;font-size:50rpx;font-weight: bold;color: red;">数 乘</text>
+          <view class="Layout">
+            <view class="inputnumber" style="border:2rpx solid">
+              <input maxlength="10"type="digit" bindblur='getnumberBlur1' value=""/>
+            </view>
+            <view class="sign">×</view>
+            <picker class="picker" mode='selector' range='{{MatList}}' range-key="name" style="border:2rpx solid" bindchange='selectorChange1'>
+            <view>矩阵：{{selector1}}</view>
+            </picker>
+          </view>
+          <view class="yncontent">
+            <button class="yn" bindtap="multplyNumberYes" style="width:100px;right:50rpx;">确认</button>
+            <button class="yn" bindtap="multplyNumberNo" style="width:100px;left:50rpx;">取消</button>
+          </view>
+    </view>
+    </form>
+    <form class="cal"style="position:fixed"wx:if="{{showmultplyMat}}">
+      <view class='demo-box'>
+        <view class='title' style="margin:20rpx;font-size:50rpx;font-weight: bold;color: red;">矩 阵 相 乘</view>
+          <view class="Layout">
+            <picker class="picker" mode='selector' range='{{MatList}}' range-key="name" style="border:2rpx solid" bindchange='selectorChange1'>
+            <view>矩阵: {{selector1}}</view>
+            </picker>
+            <view class="sign">×</view>
+            <picker class="picker" mode='selector' range='{{MatList}}' range-key="name" style="border:2rpx solid" bindchange='selectorChange2'>
+            <view>矩阵: {{selector2}}</view>
+            </picker>
+          </view>
+          <view class="yncontent">
+            <button class="yn" bindtap="multplyMatYes" style="width:100px;right:50rpx;">确认</button>
+            <button class="yn" bindtap="multplyMatNo" style="width:100px;left:50rpx;">取消</button>
+          </view>
+    </view>
+    </form>
+    <form class="cal"style="position:fixed"wx:if="{{showmatsadd}}">
+      <view class='demo-box'>
+        <view class='title' style="margin:20rpx;font-size:50rpx;font-weight: bold;color: red;">矩阵相加</view>
+          <view class="Layout">
+            <view class="inputnumber" style="border:2rpx solid">
+              <input style="flex:1;" maxlength="10"type="digit" bindblur='getnumberBlur1' placeholder=''/>
+            </view>
+            <picker class="picker" mode='selector' range='{{MatList}}' range-key="name" style="border:2rpx solid" bindchange='selectorChange1'>
+            <view>矩阵: {{selector1}}</view>
+            </picker>
+            <view class="sign">+</view>
+            <view class="inputnumber" style="border:2rpx solid">
+              <input style="flex:1;" maxlength="10"type="digit" bindblur='getnumberBlur2' placeholder=''/>
+            </view>
+            <picker class="picker" mode='selector' range='{{MatList}}' range-key="name" style="border:2rpx solid" bindchange='selectorChange2'>
+            <view>矩阵: {{selector2}}</view>
+            </picker>
+          </view>
+          <view class="yncontent">
+            <button class="yn" bindtap="MatsAddYes"style="width:100px;right:50rpx;">确认</button>
+            <button class="yn" bindtap="MatsAddNo"style="width:100px;left:50rpx;">取消</button>
+          </view>
+    </view>
+    </form>
+<view class="scroll" bindtap="click">
+  <scroll-view class="MatContiner" scroll-y="true" scroll-anchoring scroll-with-animation>
+    <block wx:for='{{MatList}}' wx:for-item="it" class="TheMat">
+      <view class="Mat">
+        <view class="firstLine">
+          <image class="reviseBut"mode="aspectFit" src="../../icon/bianji.png" style="margin-left: 30rpx;" bindtap="edit" data-index="{{it.index}}"></image>
+          <text style="flex:10" bindtap="showMat" data-index="{{it.index}}" space>{{it.name}} ( {{it.y}} × {{it.x}} ) </text>
+          <image class="reviseBut"mode="aspectFit" src="../../icon/shanchu.png" style="margin-right: 30rpx;" bindtap="del" data-index="{{it.index}}"></image>
+        </view>
+        <view class="secondLine">
+          <view class="MatButs">
+            <view class="MatBut" bindtap="turn" data-index="{{it.index}}">转置</view>
+            <view class="MatBut" bindtap="findOrder" data-index="{{it.index}}">求秩</view>
+          </view>
+          <view class="MatButs"wx:if="{{it.x==it.y}}">
+            <view class="MatBut" bindtap="finddet" data-index="{{it.index}}">行列式</view>
+            <view class="MatBut" bindtap="findaccompany" data-index="{{it.index}}"wx:if="{{it.x!=1}}">伴随</view>
+            <view class="MatBut" bindtap="findInverse" data-index="{{it.index}}">求逆</view>
+          </view>
+            <view class="MatButs">
+            </view>
+         </view>
+        </view>
+        <view class="showtxt">
+          <text class="look" wx:if="{{it.show}}"disabled>{{it.txt}}</text>
+        </view>
+    </block>
+  </scroll-view>
+  <view class="back" style="position:fixed; bottom:0;width: 750rpx;">
+    <view class="backBut"bindtap="add">添加</view>
+    <view class="backBut"bindtap="multplyNumber">数乘</view>
+    <view class="backBut"bindtap="multplyMat">乘法</view>
+    <view class="backBut"bindtap="Matsadd">加减法</view>
+  </view>
+  <!-- <view class="showtype">
+
+  </view> -->
+  <movable-area style="pointer-events:  none;height: 1055rpx;width: 100%;position:fixed;left:0px;top:0px;z-index: 20;">
+    <movable-view direction="all" style="pointer-events: auto;left:680rpx;top:800rpx;height: 60px; width: 60px; background: pink;border-radius:  50%;text-align: center;">
+    <view wx:if="{{showtype==0}}" bindtap="typechange" style="line-height:30px;font-size:17px;">
+      <view style="margin: 0;">分数</view>
+      <view style="margin: 0;">模式</view>
+    </view>
+    <view wx:if="{{showtype==1}}" bindtap="typechange" style="line-height:30px;font-size:17px;">
+      <view style="margin: 0;">小数</view>
+      <view style="margin: 0;">模式</view>
+    </view>
+  </movable-view>
+</movable-area>
+
+
+</view>
+

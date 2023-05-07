@@ -1,0 +1,10 @@
+page{
+  --buttonColor:#009999;
+  --containerColor:#3366CC;
+  --backColor:#3300CC;
+  --MatColor:#3333CC;
+  --textColor:#48ffff;
+  --nameColor:#3399CC;
+  --smallcontiner:#0066CC;
+  height:100%;
+}

@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/demo1/demo1",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor":"#6A5ACD",
+    "navigationBarTitleText": "矩阵计算器",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
